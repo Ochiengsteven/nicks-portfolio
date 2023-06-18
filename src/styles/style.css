@@ -1,8 +1,159 @@
-h2 {
-  color: red;
+@font-face {
+  font-family: 'Major mono display';
+  src: url('../fonts/MajorMonoDisplay-Regular.ttf') format('truetype');
 }
 
-img {
-  width: 100px;
-  height: 100px;
+@font-face {
+  font-family: 'lato';
+  src: url('../fonts/lato/Lato-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'tangerine';
+  src:
+    url('../fonts/tangerine/Tangerine-Regular.ttf') format('truetype'),
+    url('../fonts/tangerine/Tangerine-Bold.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #fdfbf7;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+  font-family: 'Major mono display', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  font-weight: bold;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+/* .nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links ul li {
+    padding: 0 20px;
+    font-family: 'Major mono display', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+} */
+
+.logo img {
+  width: 80px;
+  height: 80px;
+}
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50px; /* Adjust the value to change the oval shape */
+  padding: 10px 20px; /* Adjust the padding to increase the button size */
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.intros {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 90vh;
+  background-image: url('../assets/bg1.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 6vh;
+}
+
+.intro-text {
+  width: 35%;
+  height: 30%;
+  color: #333;
+  padding: 4% 2% 0% 6%;
+  font-family: 'tangerine', Arial, Helvetica, sans-serif;
+}
+
+.intro-text p {
+  font-size: 1.9rem;
+  padding-bottom: 2%;
+  font-weight: 600;
+}
+
+.stats {
+  width: 35%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stats h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

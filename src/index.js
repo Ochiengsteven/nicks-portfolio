@@ -1,12 +1,30 @@
-import assn from './assets/assn.png';
+import logo from './assets/logo.png';
 import './styles/style.css';
 
-const test = document.createElement('h2');
-test.innerText = 'Hello World';
+const logoimg = new Image();
+logoimg.src = logo;
 
-const page = document.querySelector('body');
-page.appendChild(test);
+const emblem = document.querySelector('.logo');
+emblem.appendChild(logoimg);
 
-const img = new Image();
-img.src = assn;
-page.appendChild(img);
+function animateCounter(target, startValue, endValue, duration) {
+  const range = endValue - startValue;
+  const increment = endValue > startValue ? 1 : -1;
+  const stepTime = Math.abs(Math.floor(duration / range));
+
+  let currentValue = startValue;
+  const timer = setInterval(() => {
+    currentValue += increment;
+    target.textContent = currentValue;
+
+    if (currentValue === endValue) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+
+const projectsCounter = document.getElementById('projects-counter');
+const experienceCounter = document.getElementById('experience-counter');
+
+animateCounter(projectsCounter, 0, 100, 1000); // Update endValue and duration as desired
+animateCounter(experienceCounter, 0, 4, 2000); // Update endValue and duration as desired
